@@ -12,6 +12,10 @@ html{scroll-behavior:smooth}
 body{margin:0; font-family: Arial,sans-serif;  background: var(--bg); color: var(--text-body);}
 section:nth-of-type(even) { background: var(--bg-secondary); } /* alternate section bg */
 
+h1, h2 { color: var(--text-accent); }
+nav a { color: var(--text-accent-2); }
+p { color: var(--text-body); }
+
 .hero {
     position: relative;
     height: 100vh;
@@ -66,9 +70,10 @@ nav .dropdown a { display: block; padding: 8px 16px; }
     border-radius:30px;
     transition: background 0.3s ease}
 
-.btn:hover,button:hover{transform:scale(1.05)}section{padding:70px 8%}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}
+.btn:hover, button:hover {background: var(--btn-hover); transform:scale(1.05)}section{padding:70px 8%}
+
+.cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card {padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}
 .card:hover{transform:translateY(-8px)}input,textarea{display:block;width:100%;margin:10px 0;padding:12px}@media(max-width:700px){nav{flex-direction:column}}
 
 

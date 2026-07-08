@@ -24,7 +24,25 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:#33
 
 .logo img { height: 60px; width: auto; display: block; }
 
-.nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}nav ul{display:flex;gap:20px;list-style:none}
+nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}
+nav ul {display: flex; gap:20px; list-style:none}
+nav li { position: relative; }
+nav .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  background: #fffcf6;
+  min-width: 200px;
+  padding: 8px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+nav li:hover .dropdown { display: flex; }
+nav .dropdown li { width: 100%; }
+nav .dropdown a { display: block; padding: 8px 16px; }
+
+
 .overlay{height:80%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .btn,button{background:#1c6b52;color:#fff;padding:12px 24px;text-decoration:none;border:none;border-radius:30px;transition:.3s}
 .btn:hover,button:hover{transform:scale(1.05)}section{padding:70px 8%}

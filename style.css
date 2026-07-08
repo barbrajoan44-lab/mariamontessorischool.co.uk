@@ -40,7 +40,7 @@ p { color: var(--text-body); }
   display: block;
 }
 
-.logo img { height: 60px; width: auto; display: block; }
+.logo img { height: 100px; width: auto; display: block; }
 
 .hero nav, .hero .overlay, .logo {
   position: relative; z-index: 1;

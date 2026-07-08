@@ -43,7 +43,8 @@ p { color: var(--text-body); }
 
 .full-width-image img {
   width: 100%;
-  height: auto;
+  height: 400px; /* pick whatever height you want */
+  object-fit: cover;
   display: block;
 }
 

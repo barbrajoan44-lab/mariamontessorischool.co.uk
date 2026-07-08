@@ -1,4 +1,17 @@
-html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:#333}
+:root {
+  --bg: #fffcf6;
+  --bg-secondary: #f0eadf;
+  --btn: #805851;
+  --btn-hover: #77d4c9;
+  --text-accent: #77d4c9;
+  --text-accent-2: #96d1fc;
+  --text-body: #2c2c2c;
+}
+
+html{scroll-behavior:smooth}
+body{margin:0; font-family: Arial,sans-serif;  background: var(--bg); color: var(--text-body);}
+section:nth-of-type(even) { background: var(--bg-secondary); } /* alternate section bg */
+
 .hero {
     position: relative;
     height: 100vh;
@@ -42,10 +55,23 @@ nav li:hover .dropdown { display: flex; }
 nav .dropdown li { width: 100%; }
 nav .dropdown a { display: block; padding: 8px 16px; }
 
-
 .overlay{height:80%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.btn,button{background:#1c6b52;color:#fff;padding:12px 24px;text-decoration:none;border:none;border-radius:30px;transition:.3s}
+
+.btn, button {
+    background: var(--btn);
+    color:#fff;
+    padding:12px 24px;
+    text-decoration:none;
+    border:none;
+    border-radius:30px;
+    transition: background 0.3s ease}
+
 .btn:hover,button:hover{transform:scale(1.05)}section{padding:70px 8%}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
 .card{padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}
 .card:hover{transform:translateY(-8px)}input,textarea{display:block;width:100%;margin:10px 0;padding:12px}@media(max-width:700px){nav{flex-direction:column}}
+
+
+
+
+

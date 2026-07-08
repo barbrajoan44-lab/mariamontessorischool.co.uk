@@ -7,12 +7,11 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:#33
 
 .hero-video {
     position: absolute;
-    top:0;
-    left:0;
+    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
-    z-index:-1;
+    z-index:0;
 }
 .logo {
   position: absolute;
@@ -21,8 +20,11 @@ html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;color:#33
   z-index: 2;
   background: transparent;
 }
+.hero nav, .hero .overlay { position: relative; z-index: 1; }
+
 .logo img { height: 60px; width: auto; display: block; }
-nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}nav ul{display:flex;gap:20px;list-style:none}
+
+.nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}nav ul{display:flex;gap:20px;list-style:none}
 .overlay{height:80%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
 .btn,button{background:#1c6b52;color:#fff;padding:12px 24px;text-decoration:none;border:none;border-radius:30px;transition:.3s}
 .btn:hover,button:hover{transform:scale(1.05)}section{padding:70px 8%}

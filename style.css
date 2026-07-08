@@ -41,6 +41,12 @@ p { color: var(--text-body); }
 
 .logo img { height: 60px; width: auto; display: block; }
 
+.full-width-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}
 nav ul {display: flex; gap:20px; list-style:none}
 nav li { position: relative; }

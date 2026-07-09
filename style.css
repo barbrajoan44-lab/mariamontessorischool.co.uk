@@ -102,7 +102,21 @@ nav li:hover .dropdown { display: flex; }
 nav .dropdown li { width: 100%; }
 nav .dropdown a { display: block; padding: 8px 16px; }
 
-.overlay{height:80%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.overlay{
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    text-align:left;
+padding-left: 8%;}
+
+.overlay h1 {
+  margin-bottom: 8px;   /* pulls the paragraph up closer */
+}
+.overlay p {
+  margin-top: 0;
+}
 
 .btn, button {
     background: var(--btn);

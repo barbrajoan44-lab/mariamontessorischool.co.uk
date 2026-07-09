@@ -389,10 +389,15 @@ nav .dropdown a {
 .card-btn { width: 100%; }
 
 .highlight-strip { padding: 0; }
+
+
+
 .highlight-strip-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .highlight-strip-half .highlight-strip-grid {
@@ -401,9 +406,12 @@ nav .dropdown a {
 }
 
 .highlight-img {
-  overflow: hidden;
-  height: 400px;
+    overflow: hidden;
+    height: 400px;      /* adjust to taste */
+    border-radius: 20px;
 }
+
+
 .highlight-img img {
   width:100%; height:100%; object-fit:cover; display:block;
   transition: transform 0.5s ease;

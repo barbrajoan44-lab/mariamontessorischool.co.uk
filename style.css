@@ -214,6 +214,92 @@ padding-left: 8%;}
   text-align: left;
 }
 
+.site-footer {
+  border-top: 6px solid var(--btn);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 60px 8% 40px;
+  background: var(--bg);
+}
+
+.footer-brand { display: flex; flex-direction: column; align-items: flex-start; }
+.footer-logo { height: 90px; width: auto; margin-bottom: 16px; }
+.footer-school-name {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  color: var(--btn);
+  line-height: 1.2;
+}
+
+.footer-col h4 {
+  color: var(--btn);
+  font-family: Georgia, serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.footer-col p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: var(--text-body);
+}
+
+.footer-col a {
+  display: block;
+  color: var(--text-accent-2);
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.footer-col a:hover { color: var(--btn); }
+
+.social-link {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-body) !important;
+}
+.icon-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--text-body);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  background: #1c1c1c;
+  color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 8%;
+  font-size: 0.85rem;
+}
+.footer-legal-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-legal-links a { color: #ddd; text-decoration: none; }
+.footer-legal-links a:hover { color: var(--btn-hover); }
+
+@media (max-width: 800px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .footer-top { grid-template-columns: 1fr; }
+}
+
 .cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
 .card {padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}
 .card:hover{transform:translateY(-8px)}input,textarea{display:block;width:100%;margin:10px 0;padding:12px}@media(max-width:700px){nav{flex-direction:column}}

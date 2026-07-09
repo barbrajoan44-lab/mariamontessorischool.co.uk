@@ -1,13 +1,38 @@
-const t=['Our child loves coming to school.','Warm, nurturing environment.','A wonderful place to grow.'];
-let i=0;const q=document.getElementById('quote');
-function show(){q.textContent='“'+t[i]+'”';i=(i+1)%t.length;}show();setInterval(show,3000);
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- Mobile nav toggle ---------- */
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
 
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ---------- Scroll-reveal animation ---------- */
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
 });

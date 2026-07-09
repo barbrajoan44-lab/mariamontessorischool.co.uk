@@ -285,8 +285,29 @@ padding-left: 8%;}
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  padding: 18px 8%;
+ padding: 24px 8% 18px;
   font-size: 0.85rem;
+}
+
+.footer-legal-text {
+  padding-bottom: 20px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.footer-legal-text p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+  color: #bbb;
+}
+.footer-legal-text p:first-child {
+  color: #ddd;
+}
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .footer-legal-links { display: flex; gap: 24px; flex-wrap: wrap; }
 .footer-legal-links a { color: #ddd; text-decoration: none; }

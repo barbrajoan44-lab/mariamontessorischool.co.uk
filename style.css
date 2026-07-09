@@ -47,18 +47,11 @@ p{ color: var(--text-body); }
   display: block;
 }
 
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 8%;
-  z-index: 2;
-  background: transparent;
-  height: 60px;
+.logo img {
+  height: 70px;
   width: auto;
   display: block;
 }
-
-.logo img { height: 100px; width: auto; display: block; }
 
 .hero nav, .hero .overlay, .logo {
   position: relative; z-index: 1;

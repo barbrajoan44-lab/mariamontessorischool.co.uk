@@ -177,6 +177,21 @@ padding-left: 8%;}
   }
 }
 
+.testimonial-row {
+  scrollbar-width: thin;
+  scrollbar-color: var(--btn) var(--bg-secondary);
+}
+.testimonial-row::-webkit-scrollbar { height: 8px; }
+.testimonial-row::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+.testimonial-row::-webkit-scrollbar-thumb {
+  background: var(--btn);
+  border-radius: 10px;
+}
+.testimonial-row::-webkit-scrollbar-thumb:hover { background: var(--btn-hover); }
+
 .testimonials {
   padding: 70px 8%;
   text-align: center;

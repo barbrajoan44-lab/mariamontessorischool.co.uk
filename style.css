@@ -27,7 +27,9 @@ nav a.btn { color: #fff; text-shadow: none; }
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0,0,0,0) 0%,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.15) 12%,
+    rgba(0,0,0,0) 25%,
     rgba(0,0,0,0) 55%,
     rgba(0,0,0,0.5) 100%
   );
@@ -102,7 +104,7 @@ nav .dropdown {
   min-width: 220px;
   padding: 10px 0;
      border-radius: 8px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+      border: 1px solid rgba(0,0,0,0.08);
 }
 
 nav li:hover .dropdown { display: flex; }

@@ -10,6 +10,8 @@ nav a:hover {
     color: #96d1fc;
 }
 
+nav a.btn { color: #fff; text-shadow: none; }
+
 :root {
   --bg: #fffcf6;
   --bg-secondary: #f0eadf;

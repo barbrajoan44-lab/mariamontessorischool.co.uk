@@ -365,6 +365,39 @@ nav .dropdown a {
   .footer-top { grid-template-columns: 1fr; }
 }
 
+.observation-gallery {
+    padding: 70px 0;
+    background: var(--bg);
+}
+
+.observation-grid {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.observation-image {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.observation-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.observation-image:hover img {
+    transform: scale(1.05);
+}
+
 .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px; }
 
 .card {
@@ -400,10 +433,6 @@ nav .dropdown a {
     margin: 0 auto;
 }
 
-.highlight-strip-half .highlight-strip-grid {
-  max-width: 50%;
-  margin: 0 auto;
-}
 
 .highlight-img {
     overflow: hidden;

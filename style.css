@@ -1,3 +1,13 @@
+nav a {
+    color: #2c2c2c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #96d1fc;
+}
+
 :root {
   --bg: #fffcf6;
   --bg-secondary: #f0eadf;
@@ -8,140 +18,74 @@
   --text-body: #2c2c2c;
 }
 
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text-body);
-}
-
-section:nth-of-type(even) { background: var(--bg-secondary); }
+html{scroll-behavior:smooth}
+body{margin:0; font-family: Arial,sans-serif;  background: var(--bg); color: var(--text-body);}
+section:nth-of-type(even) { background: var(--bg-secondary); } /* alternate section bg */
 
 h1, h2 { color: var(--text-accent); }
-p { color: var(--text-body); }
-
-section { padding: 70px 8%; }
-
-/* =========================================================
-   Buttons
-   ========================================================= */
-.btn, button {
-  background: var(--btn);
-  color: #fff;
-  padding: 12px 24px;
-  text-decoration: none;
-  border: none;
-  border-radius: 30px;
-  transition: background 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-  display: inline-block;
-}
-.btn:hover, button:hover {
-  background: var(--btn-hover);
-  transform: scale(1.05);
+nav a {
+      text-decoration:none;
+    color:#2c2c2c;
+    font-size:16px;
+    font-weight:500;
 }
 
-/* =========================================================
-   Hero
-   ========================================================= */
+p{ color: var(--text-body); }
+
 .hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.full-width-image {
-  position: absolute;
-  inset: 0;
+
+
+.video-section video {
   width: 100%;
-  height: 100%;
+  height: 500px;
   object-fit: cover;
-  z-index: 0;
+  display: block;
 }
 
-/* Gradient scrim: darkens the top (behind nav) and bottom (behind
-   headline) so text stays readable, while the middle of the photo
-   stays clear so it still reads as a strong, full image. This
-   replaces the old empty .header-banner div. */
-.hero::before {
-  content: "";
+.logo {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.08) 30%,
-    rgba(0, 0, 0, 0.08) 55%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-.header-container,
-.overlay {
-  position: relative;
+  top: 20px;
+  left: 8%;
   z-index: 2;
-}
-
-/* =========================================================
-   Header / Logo / Nav
-   Logo and nav sit in the SAME flex row, so they always
-   align automatically — no manual top/left positioning.
-   ========================================================= */
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 8%;
-}
-
-.logo img {
+  background: transparent;
   height: 60px;
   width: auto;
   display: block;
 }
 
-nav {
-  display: flex;
-  align-items: center;
+.logo img { height: 100px; width: auto; display: block; }
+
+.hero nav, .hero .overlay, .logo {
+  position: relative; z-index: 1;
 }
+
+
+.full-width-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%; /* pick whatever height you want */
+  object-fit: cover;
+   z-index: 0;
+}
+
+nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}
 
 nav ul {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    align-items:center;
+    gap:20px; 
+    list-style:none
+    margin:0;
+    padding:0;
 }
-
-nav a {
-  color: var(--text-accent);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  transition: color 0.3s ease;
-}
-nav a:hover { color: var(--btn-hover); }
-
-/* The Enquire button in the nav is a .btn, so it keeps its own
-   solid background/white text and shouldn't inherit the nav
-   link styling above. */
-nav a.btn {
-  color: #fff;
-  text-shadow: none;
-}
-nav a.btn:hover { color: #fff; }
 
 nav li { position: relative; }
-
-/* Dropdowns sit on a light cream background, so their links need
-   normal dark text, not the light nav colour + shadow used over
-   the photo. */
 nav .dropdown {
   display: none;
   position: absolute;
@@ -149,22 +93,41 @@ nav .dropdown {
   left: 0;
   flex-direction: column;
   background: #fffcf6;
-  min-width: 220px;
-  padding: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  min-width: 200px;
+  padding: 8px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
+
 nav li:hover .dropdown { display: flex; }
 nav .dropdown li { width: 100%; }
-nav .dropdown a {
-  display: block;
-  padding: 8px 18px;
-  color: var(--text-body);
-  font-weight: 500;
-  font-size: 15px;
-  text-shadow: none;
+nav .dropdown a { display: block; padding: 8px 16px; }
+
+.overlay{
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    text-align:left;
+padding-left: 8%;}
+
+.overlay h1 {
+  margin-bottom: 8px;   /* pulls the paragraph up closer */
 }
-nav .dropdown a:hover { color: var(--btn); }
+.overlay p {
+  margin-top: 0;
+}
+
+.btn, button {
+    background: var(--btn);
+    color:#fff;
+    padding:12px 24px;
+    text-decoration:none;
+    border:none;
+    border-radius:30px;
+    transition: background 0.3s ease}
+
+.btn:hover, button:hover {background: var(--btn-hover); transform:scale(1.05)}section{padding:70px 8%}
 
 .nav-toggle {
   display: none;
@@ -181,17 +144,27 @@ nav .dropdown a:hover { color: var(--btn); }
 .nav-toggle span {
   width: 100%;
   height: 3px;
-  background: var(--bg);
+  background: var(--text-body);
   border-radius: 2px;
 }
 
+.header-container {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:30px 30px;
+}
+
+
 @media (max-width: 900px) {
   .nav-toggle { display: flex; }
-
+ 
+    .header-banner {
+    display: none;
+  }
   nav ul {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
     position: absolute;
     top: 100%;
     left: 0;
@@ -202,11 +175,7 @@ nav .dropdown a:hover { color: var(--btn); }
   }
   nav ul.open { display: flex; }
 
-  nav a {
-    color: var(--text-body);
-    text-shadow: none;
-  }
-
+  /* dropdowns become simple stacked items on mobile instead of hover popups */
   nav .dropdown {
     display: block;
     position: static;
@@ -215,119 +184,6 @@ nav .dropdown a:hover { color: var(--btn); }
   }
 }
 
-/* =========================================================
-   Overlay (hero headline)
-   ========================================================= */
-.overlay {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  padding-left: 8%;
-}
-.overlay h1 {
-  margin-bottom: 8px;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);
-}
-.overlay p {
-  margin-top: 0;
-  color: var(--bg);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* =========================================================
-   Video section
-   ========================================================= */
-.video-section video {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  display: block;
-}
-
-/* =========================================================
-   Cards (Academic Stages / School News)
-   Image sits flush at the top, content is padded below it.
-   ========================================================= */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-}
-
-.card {
-  background: #f2f2f2;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.25);
-}
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 35px -15px rgba(0, 0, 0, 0.3);
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.card-content {
-  padding: 24px 28px 30px;
-  text-align: center;
-}
-
-.card-content h3 {
-  font-family: Georgia, 'Times New Roman', serif;
-  color: var(--btn);
-  font-size: 1.4rem;
-  margin: 0 0 8px;
-}
-
-.card-age {
-  color: var(--text-body);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-.card-btn { width: 100%; }
-
-/* =========================================================
-   Highlight strip (fills the gap before Testimonials)
-   ========================================================= */
-.highlight-strip { padding: 0; }
-
-.highlight-strip-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
-}
-
-.highlight-img {
-  overflow: hidden;
-  height: 320px;
-}
-.highlight-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-.highlight-img:hover img { transform: scale(1.08); }
-
-@media (max-width: 700px) {
-  .highlight-strip-grid { grid-template-columns: 1fr; }
-  .highlight-img { height: 240px; }
-}
-
-/* =========================================================
-   Testimonials
-   ========================================================= */
 .testimonials {
   padding: 70px 8%;
   text-align: center;
@@ -340,31 +196,14 @@ nav .dropdown a:hover { color: var(--btn); }
   scroll-snap-type: x mandatory;
   padding: 30px 0;
   margin-top: 20px;
-
-  /* Firefox */
-  scrollbar-width: thin;
-  scrollbar-color: var(--btn) var(--bg-secondary);
 }
-
-/* Chrome / Edge / Safari */
-.testimonial-row::-webkit-scrollbar { height: 8px; }
-.testimonial-row::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-  border-radius: 10px;
-}
-.testimonial-row::-webkit-scrollbar-thumb {
-  background: var(--btn);
-  border-radius: 10px;
-}
-.testimonial-row::-webkit-scrollbar-thumb:hover { background: var(--btn-hover); }
 
 .testimonial-card {
-  flex: 0 0 280px;
+  flex: 0 0 280px;        /* fixed width, doesn't shrink or grow */
   scroll-snap-align: start;
   background: #f7f2e9;
   padding: 30px 24px;
   min-height: 220px;
-  border-radius: 12px;
 }
 
 .testimonial-card p {
@@ -375,10 +214,9 @@ nav .dropdown a:hover { color: var(--btn); }
   text-align: left;
 }
 
-/* =========================================================
-   Footer
-   ========================================================= */
-.site-footer { border-top: 6px solid var(--btn); }
+.site-footer {
+  border-top: 6px solid var(--btn);
+}
 
 .footer-top {
   display: grid;
@@ -392,9 +230,9 @@ nav .dropdown a:hover { color: var(--btn); }
 .footer-logo { height: 90px; width: auto; margin-bottom: 16px; }
 .footer-school-name {
   font-family: Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: var(--btn);
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .footer-col h4 {
@@ -442,18 +280,28 @@ nav .dropdown a:hover { color: var(--btn); }
 .footer-bottom {
   background: #1c1c1c;
   color: #ddd;
-  padding: 24px 8% 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+ padding: 24px 8% 18px;
   font-size: 0.85rem;
 }
 
 .footer-legal-text {
   padding-bottom: 20px;
   margin-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-.footer-legal-text p { margin: 0 0 8px; line-height: 1.6; color: #bbb; }
-.footer-legal-text p:first-child { color: #ddd; }
-
+.footer-legal-text p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+  color: #bbb;
+}
+.footer-legal-text p:first-child {
+  color: #ddd;
+}
 .footer-bottom-row {
   display: flex;
   justify-content: space-between;
@@ -467,45 +315,17 @@ nav .dropdown a:hover { color: var(--btn); }
 
 @media (max-width: 800px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 480px) {
   .footer-top { grid-template-columns: 1fr; }
 }
 
-/* =========================================================
-   Forms
-   ========================================================= */
-input, textarea {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-}
+.cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card {padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}
+.card:hover{transform:translateY(-8px)}input,textarea{display:block;width:100%;margin:10px 0;padding:12px}@media(max-width:700px){nav{flex-direction:column}}
 
-/* =========================================================
-   Scroll-reveal (modern touch — fade/slide up as you scroll)
-   ========================================================= */
-/* Content is visible by default. The fade-in animation only
-   applies once JS confirms it's ready to run (see script.js) —
-   so if JS fails for any reason, nothing gets hidden. */
-[data-reveal] { opacity: 1; }
 
-.reveal-ready [data-reveal] {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.reveal-ready [data-reveal].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
-}
-/* =========================================================
-   Small screens
-   ========================================================= */
-@media (max-width: 700px) {
-  .header-container { padding: 20px 6%; }
-}
+
+

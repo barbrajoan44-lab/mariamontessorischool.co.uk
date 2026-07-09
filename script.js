@@ -1,3 +1,5 @@
+@@ -1 +1,13 @@
+const t=['Our child loves coming to school.','Warm, nurturing environment.','A wonderful place to grow.'];let i=0;const q=document.getElementById('quote');function show(){q.textContent='“'+t[i]+'”';i=(i+1)%t.length;}show();setInterval(show,3000);
 const t=['Our child loves coming to school.','Warm, nurturing environment.','A wonderful place to grow.'];
 let i=0;const q=document.getElementById('quote');
 function show(){q.textContent='“'+t[i]+'”';i=(i+1)%t.length;}show();setInterval(show,3000);

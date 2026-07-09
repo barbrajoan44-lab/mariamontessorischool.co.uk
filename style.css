@@ -1,12 +1,16 @@
 nav a {
-    color: #2c2c2c;
-    text-decoration: none;
+      text-decoration:none;
+    color:#2c2c2c;
+    font-size:16px;
+    font-weight:600;
+     text-shadow: 0 2px 6px rgba(0,0,0,0.5);
     transition: color 0.3s ease;
 }
-
 nav a:hover {
     color: #96d1fc;
 }
+
+nav a.btn { color: #fff; text-shadow: none; }
 
 :root {
   --bg: #fffcf6;
@@ -23,12 +27,8 @@ body{margin:0; font-family: Arial,sans-serif;  background: var(--bg); color: var
 section:nth-of-type(even) { background: var(--bg-secondary); } /* alternate section bg */
 
 h1, h2 { color: var(--text-accent); }
-nav a {
-      text-decoration:none;
-    color:#2c2c2c;
-    font-size:16px;
-    font-weight:500;
-}
+
+
 
 p{ color: var(--text-body); }
 
@@ -47,18 +47,11 @@ p{ color: var(--text-body); }
   display: block;
 }
 
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 8%;
-  z-index: 2;
-  background: transparent;
-  height: 60px;
+.logo img {
+  height: 70px;
   width: auto;
   display: block;
 }
-
-.logo img { height: 100px; width: auto; display: block; }
 
 .hero nav, .hero .overlay, .logo {
   position: relative; z-index: 1;
@@ -80,7 +73,7 @@ nav ul {
     display: flex;
     align-items:center;
     gap:20px; 
-    list-style:none
+    list-style:none;
     margin:0;
     padding:0;
 }
@@ -93,9 +86,10 @@ nav .dropdown {
   left: 0;
   flex-direction: column;
   background: #fffcf6;
-  min-width: 200px;
-  padding: 8px 0;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  min-width: 220px;
+  padding: 10px 0;
+     border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.22);
 }
 
 nav li:hover .dropdown { display: flex; }
@@ -116,6 +110,8 @@ padding-left: 8%;}
 }
 .overlay p {
   margin-top: 0;
+        color: var(--bg);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .btn, button {
@@ -183,6 +179,21 @@ padding-left: 8%;}
     padding-left: 16px;
   }
 }
+
+.testimonial-row {
+  scrollbar-width: thin;
+  scrollbar-color: var(--btn) var(--bg-secondary);
+}
+.testimonial-row::-webkit-scrollbar { height: 8px; }
+.testimonial-row::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+.testimonial-row::-webkit-scrollbar-thumb {
+  background: var(--btn);
+  border-radius: 10px;
+}
+.testimonial-row::-webkit-scrollbar-thumb:hover { background: var(--btn-hover); }
 
 .testimonials {
   padding: 70px 8%;
@@ -321,9 +332,45 @@ padding-left: 8%;}
   .footer-top { grid-template-columns: 1fr; }
 }
 
-.cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card {padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}
-.card:hover{transform:translateY(-8px)}input,textarea{display:block;width:100%;margin:10px 0;padding:12px}@media(max-width:700px){nav{flex-direction:column}}
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:28px; }
+
+.card {
+  background:#f2f2f2;
+  border-radius:16px;
+  overflow:hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px -15px rgba(0,0,0,0.25);
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 35px -15px rgba(0,0,0,0.3);
+}
+.card img { width:100%; height:220px; object-fit:cover; display:block; }
+.card-content { padding: 24px 28px 30px; text-align:center; }
+.card-content h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--btn);
+  font-size: 1.4rem;
+  margin: 0 0 8px;
+}
+.card-age { color: var(--text-body); margin-bottom: 20px; font-size: 0.95rem; }
+.card-btn { width: 100%; }
+
+.highlight-strip { padding: 0; }
+.highlight-strip-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+.highlight-img { overflow:hidden; height:320px; }
+.highlight-img img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition: transform 0.5s ease;
+}
+.highlight-img:hover img { transform: scale(1.08); }
+
+@media (max-width:700px){
+  .highlight-strip-grid{ grid-template-columns:1fr; }
+  .highlight-img{ height:240px; }
+}
+
+input,textarea{display:block;width:100%;margin:10px 0;padding:12px}@media(max-width:700px){nav{flex-direction:column}}
 
 
 

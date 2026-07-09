@@ -1,3 +1,13 @@
+nav a {
+    color: #2c2c2c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #96d1fc;
+}
+
 :root {
   --bg: #fffcf6;
   --bg-secondary: #f0eadf;
@@ -13,8 +23,14 @@ body{margin:0; font-family: Arial,sans-serif;  background: var(--bg); color: var
 section:nth-of-type(even) { background: var(--bg-secondary); } /* alternate section bg */
 
 h1, h2 { color: var(--text-accent); }
-nav a { color: var(--text-accent-2); }
-p { color: var(--text-body); }
+nav a {
+      text-decoration:none;
+    color:#2c2c2c;
+    font-size:16px;
+    font-weight:500;
+}
+
+p{ color: var(--text-body); }
 
 .hero {
     position: relative;
@@ -22,34 +38,53 @@ p { color: var(--text-body); }
     overflow: hidden;
 }
 
-.hero-video {
-    position: absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:0;
-}
-.logo {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  z-index: 2;
-  background: transparent;
-}
-.hero nav, .hero .overlay { position: relative; z-index: 1; }
 
-.logo img { height: 60px; width: auto; display: block; }
 
-.full-width-image img {
+.video-section video {
   width: 100%;
-  height: 400px; /* pick whatever height you want */
+  height: 500px;
   object-fit: cover;
   display: block;
 }
 
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 8%;
+  z-index: 2;
+  background: transparent;
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo img { height: 100px; width: auto; display: block; }
+
+.hero nav, .hero .overlay, .logo {
+  position: relative; z-index: 1;
+}
+
+
+.full-width-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%; /* pick whatever height you want */
+  object-fit: cover;
+   z-index: 0;
+}
+
 nav{display:flex;justify-content:space-between;padding:20px 8%;position:sticky}
-nav ul {display: flex; gap:20px; list-style:none}
+
+nav ul {
+    display: flex;
+    align-items:center;
+    gap:20px; 
+    list-style:none
+    margin:0;
+    padding:0;
+}
+
 nav li { position: relative; }
 nav .dropdown {
   display: none;
@@ -62,11 +97,26 @@ nav .dropdown {
   padding: 8px 0;
   box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
+
 nav li:hover .dropdown { display: flex; }
 nav .dropdown li { width: 100%; }
 nav .dropdown a { display: block; padding: 8px 16px; }
 
-.overlay{height:80%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.overlay{
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    text-align:left;
+padding-left: 8%;}
+
+.overlay h1 {
+  margin-bottom: 8px;   /* pulls the paragraph up closer */
+}
+.overlay p {
+  margin-top: 0;
+}
 
 .btn, button {
     background: var(--btn);
@@ -78,6 +128,61 @@ nav .dropdown a { display: block; padding: 8px 16px; }
     transition: background 0.3s ease}
 
 .btn:hover, button:hover {background: var(--btn-hover); transform:scale(1.05)}section{padding:70px 8%}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.nav-toggle span {
+  width: 100%;
+  height: 3px;
+  background: var(--text-body);
+  border-radius: 2px;
+}
+
+.header-container {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:30px 30px;
+}
+
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+ 
+    .header-banner {
+    display: none;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    padding: 20px 8%;
+    gap: 12px;
+  }
+  nav ul.open { display: flex; }
+
+  /* dropdowns become simple stacked items on mobile instead of hover popups */
+  nav .dropdown {
+    display: block;
+    position: static;
+    box-shadow: none;
+    padding-left: 16px;
+  }
+}
 
 .cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
 .card {padding:50px;background:#f2f2f2;border-radius:12px;transition:.3s}

@@ -32,18 +32,13 @@ nav a {
 
 p{ color: var(--text-body); }
 
-.header-container {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:30px 30px;
-}
-
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
 }
+
+
 
 .video-section video {
   width: 100%;
@@ -139,9 +134,20 @@ nav .dropdown a { display: block; padding: 8px 16px; }
   border-radius: 2px;
 }
 
+.header-container {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:30px 30px;
+}
+
+
 @media (max-width: 900px) {
   .nav-toggle { display: flex; }
-
+ 
+    .header-banner {
+    display: none;
+  }
   nav ul {
     display: none;
     flex-direction: column;
